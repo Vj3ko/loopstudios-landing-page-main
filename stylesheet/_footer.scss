@@ -1,0 +1,41 @@
+.footer {
+      margin-top: 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: $--clr-black;
+      color: $--clr-white;
+      padding: 3.5rem 0;
+
+      &__logo {
+            @extend .header__navbar_logo;
+            margin-bottom: 2.5rem;
+      }
+
+      &__list {
+            list-style-type: none;
+
+            li:not(:last-of-type) {
+                  margin-bottom: 1.875rem;
+            }
+      }
+
+      &__social_icons {
+            margin-top: 3.125rem;
+            margin-bottom: 1.25rem;
+
+            i {
+                  font-size: 1.5625rem;
+            }
+
+            i:not(:last-of-type) {
+                  margin-right: 1rem;
+            }
+      }
+
+      p {
+            font-family: "Alata", sans-serif;
+            color: $--clr-dk_Gray;
+      }
+}
