@@ -1,26 +1,61 @@
 .creations {
-      padding: 0 1.5625rem;
+      padding: 0 5%;
       text-align: center;
+      margin: auto;
       margin-top: 6rem;
+
+      @include responsive("laptop") {
+            padding: 0 15%;
+            display: grid;
+            margin-top: 8rem;
+      }
 
       &__title {
             @extend .main__info_title;
             margin-bottom: 1.25rem;
+
+            @include responsive("laptop") {
+                  margin-right: auto;
+                  margin-bottom: 5.625rem;
+            }
       }
 
       &__container {
-            display: flex;
-            flex-flow: column nowrap;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5625rem;
+
+            @include responsive("phone") {
+                  grid-template-columns: 1fr 1fr;
+            }
+
+            @include responsive("laptop") {
+                  grid-template-columns: repeat(3, 1fr);
+                  grid-column: 1/3;
+                  grid-row: 2/3;
+            }
+
+            @include responsive("desktop") {
+                  grid-template-columns: repeat(4, 1fr);
+            }
 
             &_item {
                   width: 100%;
-                  height: 7.5rem;
-                  margin-top: 1.5625rem;
-                  background: url(../images/mobile/image-deep-earth.jpg) center
-                        no-repeat;
-                  background-size: cover;
+                  height: 30vw;
                   position: relative;
                   text-align: left;
+
+                  &:hover {
+                        cursor: pointer;
+                  }
+
+                  &:hover h3 {
+                        color: $--clr-black;
+                  }
+
+                  &:hover::after {
+                        opacity: 1;
+                  }
 
                   &::before {
                         content: "";
@@ -28,13 +63,22 @@
                         top: 0;
                         left: 0;
                         bottom: 0;
-                        right: 0;
+                        right: 50%;
                         background: linear-gradient(
                               90deg,
                               rgba(0, 0, 0, 0.5) 0%,
                               rgba(0, 0, 0, 0.25) 50%,
                               rgba(0, 0, 0, 0) 100%
                         );
+
+                        @include responsive("laptop") {
+                              background: linear-gradient(
+                                    rgba(0, 0, 0, 0),
+                                    rgba(0, 0, 0, 0.7)
+                              );
+                              top: 50%;
+                              right: 0;
+                        }
                   }
 
                   h3 {
@@ -45,48 +89,115 @@
                         position: absolute;
                         bottom: 1.25rem;
                         left: 1.25rem;
+                        z-index: 50;
+                        transition: color 300ms ease-in-out;
+
+                        @include responsive("laptop") {
+                              font-size: 1.875rem;
+                              bottom: 2.25rem;
+                              left: 2.25rem;
+                        }
+
+                        @include responsive("desktop") {
+                              bottom: 1.75rem;
+                              left: 1.75rem;
+                        }
+                  }
+
+                  &.earth {
+                        background: url(../images/mobile/image-deep-earth.jpg)
+                              center no-repeat;
+                        background-size: cover;
+
+                        @include responsive("laptop") {
+                              background: url(../images/desktop/image-deep-earth.jpg)
+                                    no-repeat;
+                              background-size: cover;
+                        }
                   }
 
                   &.arcade {
                         background: url(../images/mobile/image-night-arcade.jpg)
                               no-repeat;
                         background-size: cover;
+
+                        @include responsive("laptop") {
+                              background: url(../images/desktop/image-night-arcade.jpg)
+                                    no-repeat;
+                              background-size: cover;
+                        }
                   }
 
                   &.soccer {
                         background: url(../images/mobile/image-soccer-team.jpg)
                               no-repeat;
                         background-size: cover;
+
+                        @include responsive("laptop") {
+                              background: url(../images/desktop/image-soccer-team.jpg)
+                                    no-repeat;
+                              background-size: cover;
+                        }
                   }
 
                   &.grid {
                         background: url(../images/mobile/image-grid.jpg)
                               no-repeat;
                         background-size: cover;
+
+                        @include responsive("laptop") {
+                              background: url(../images/desktop/image-grid.jpg)
+                                    no-repeat;
+                              background-size: cover;
+                        }
                   }
 
                   &.vr {
                         background: url(../images/mobile/image-from-above.jpg)
                               no-repeat;
                         background-size: cover;
+
+                        @include responsive("laptop") {
+                              background: url(../images/desktop/image-from-above.jpg)
+                                    no-repeat;
+                              background-size: cover;
+                        }
                   }
 
                   &.borealis {
                         background: url(../images/mobile/image-pocket-borealis.jpg)
                               no-repeat;
                         background-size: cover;
+
+                        @include responsive("laptop") {
+                              background: url(../images/desktop/image-pocket-borealis.jpg)
+                                    no-repeat;
+                              background-size: cover;
+                        }
                   }
 
                   &.curiosity {
                         background: url(../images/mobile/image-curiosity.jpg)
                               no-repeat;
                         background-size: cover;
+
+                        @include responsive("laptop") {
+                              background: url(../images/desktop/image-curiosity.jpg)
+                                    no-repeat;
+                              background-size: cover;
+                        }
                   }
 
                   &.fisheye {
                         background: url(../images/mobile/image-fisheye.jpg)
                               no-repeat;
                         background-size: cover;
+
+                        @include responsive("laptop") {
+                              background: url(../images/desktop/image-fisheye.jpg)
+                                    no-repeat;
+                              background-size: cover;
+                        }
                   }
             }
       }
@@ -103,5 +214,18 @@
             padding: 0.75rem 2.8125rem;
             display: inline-block;
             margin-top: 2.1875rem;
+            transition: all 300ms ease-in-out;
+
+            &:hover {
+                  color: $--clr-white;
+                  background: $--clr-black;
+            }
+
+            @include responsive("laptop") {
+                  margin-left: auto;
+                  margin-top: 0;
+                  display: flex;
+                  align-self: start;
+            }
       }
 }

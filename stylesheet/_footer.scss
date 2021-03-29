@@ -1,4 +1,5 @@
 .footer {
+      margin: auto;
       margin-top: 6rem;
       display: flex;
       flex-direction: column;
@@ -6,18 +7,79 @@
       align-items: center;
       background: $--clr-black;
       color: $--clr-white;
-      padding: 3.5rem 0;
+      padding: 3.5rem 5%;
+
+      @include responsive("laptop") {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 3.5rem 15%;
+      }
+
+      .wrapper {
+            text-align: center;
+      }
 
       &__logo {
-            @extend .header__navbar_logo;
+            width: 9.375rem;
+            margin: auto;
             margin-bottom: 2.5rem;
+
+            @include responsive("laptop") {
+                  width: 12.5rem;
+                  margin: 0;
+                  margin-bottom: 2.1875rem;
+            }
+
+            img {
+                  width: 100%;
+            }
       }
 
       &__list {
             list-style-type: none;
 
+            a {
+                  color: $--clr-white;
+                  text-decoration: none;
+                  position: relative;
+
+                  &::after {
+                        content: "";
+                        width: 50%;
+                        height: 2px;
+                        background-color: $--clr-white;
+                        display: block;
+                        position: absolute;
+                        bottom: -0.25rem;
+                        left: 25%;
+                        opacity: 0;
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: all 300ms ease-in-out;
+                  }
+
+                  &:hover::after {
+                        opacity: 1;
+                        transform: scaleX(1);
+                  }
+            }
+
             li:not(:last-of-type) {
                   margin-bottom: 1.875rem;
+
+                  @include responsive("tablet") {
+                        margin-right: 1rem;
+                        margin-bottom: 0;
+                  }
+
+                  @include responsive("desktop") {
+                        margin-right: 2.5rem;
+                  }
+            }
+
+            @include responsive("tablet") {
+                  display: flex;
             }
       }
 
@@ -25,8 +87,44 @@
             margin-top: 3.125rem;
             margin-bottom: 1.25rem;
 
+            @include responsive("laptop") {
+                  margin: 0;
+                  margin-bottom: 2.1875rem;
+                  display: flex;
+                  justify-content: flex-end;
+            }
+
             i {
                   font-size: 1.5625rem;
+                  position: relative;
+
+                  @include responsive("laptop") {
+                        font-size: 1.875rem;
+                  }
+
+                  &:hover {
+                        cursor: pointer;
+                  }
+
+                  &::after {
+                        content: "";
+                        width: 50%;
+                        height: 2px;
+                        background-color: $--clr-white;
+                        display: block;
+                        position: absolute;
+                        bottom: -0.5rem;
+                        left: 25%;
+                        opacity: 0;
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: all 300ms ease-in-out;
+                  }
+
+                  &:hover::after {
+                        opacity: 1;
+                        transform: scaleX(1);
+                  }
             }
 
             i:not(:last-of-type) {

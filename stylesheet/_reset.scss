@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+html,
+body {
+      font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+      overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+}
+
+p {
+      font-size: 0.9375rem;
+}
+
+a {
+      font-family: "Alata", sans-serif;
+}

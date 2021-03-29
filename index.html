@@ -29,7 +29,7 @@
 
             <title>Frontend Mentor | Loopstudios landing page</title>
       </head>
-      <body>
+      <body id="body">
             <header class="header">
                   <nav class="header__navbar">
                         <div class="header__navbar_logo">
@@ -39,10 +39,27 @@
                               />
                         </div>
 
+                        <div class="header__navbar_list">
+                              <a href="#" class="menu_item">About</a>
+                              <a href="#" class="menu_item">Careers</a>
+                              <a href="#" class="menu_item">Events</a>
+                              <a href="#" class="menu_item">Products</a>
+                              <a href="#" class="menu_item">Support</a>
+                        </div>
+
                         <div class="header__menu">
                               <div class="mobile-menu">
-                                    <img src="./images/logo.svg" class="mobile-logo" alt="Loopstudios logo">
-                                    <img src="./images/icon-close.svg" alt=" X close icon">
+                                    <img
+                                          src="./images/logo.svg"
+                                          class="mobile-logo"
+                                          alt="Loopstudios logo"
+                                    />
+                                    <img
+                                          src="./images/icon-close.svg"
+                                          alt=" X close icon"
+                                          id="close-btn"
+                                          class="close-btn"
+                                    />
                               </div>
 
                               <div class="menu_list">
@@ -54,12 +71,13 @@
                               </div>
                         </div>
 
-                        <div class="hamburger">
-                              <img src="./images/icon-hamburger.svg" alt="menu hamburger icon">
-                        </div> 
+                        <div class="header__navbar_hamburger" id="open-btn">
+                              <img
+                                    src="./images/icon-hamburger.svg"
+                                    alt="menu hamburger icon"
+                              />
+                        </div>
                   </nav>
-
-
 
                   <div class="header__title">
                         <h1>Immersive experiences that deliver</h1>
@@ -87,29 +105,46 @@
                   <h2 class="creations__title">Our creations</h2>
 
                   <div class="creations__container">
-                        <div class="creations__container_item earth">
-                              <h3>Deep<br>earth</h3>
+                        <div 
+                              class="creations__container_item earth" 
+                              data-tilt>
+                              <h3>Deep<br />earth</h3>
                         </div>
-                        <div class="creations__container_item arcade">
-                              <h3>Night<br>arcade</h3>
+                        <div 
+                              class="creations__container_item arcade" 
+                              data-tilt>
+                              <h3>Night<br />arcade</h3>
                         </div>
-                        <div class="creations__container_item soccer">
-                              <h3>Soccer<br>team VR</h3>
+                        <div 
+                              class="creations__container_item soccer" 
+                              data-tilt>
+                              <h3>Soccer<br />team VR</h3>
                         </div>
-                        <div class="creations__container_item grid">
-                              <h3>The<br>Grid</h4>
+                        <div 
+                              class="creations__container_item grid"
+                              data-tilt>
+                              <h3>The<br />Grid</h3>
                         </div>
-                        <div class="creations__container_item vr">
-                              <h3>From up<br>above VR</h3>
+                        <div class="creations__container_item vr" data-tilt>
+                              <h3>From up<br />above VR</h3>
                         </div>
-                        <div class="creations__container_item borealis">
-                              <h3>Pocket<br>borealis</h3>
+                        <div
+                              class="creations__container_item borealis"
+                              data-tilt
+                        >
+                              <h3>Pocket<br />borealis</h3>
                         </div>
-                        <div class="creations__container_item curiosity">
-                              <h3>The<br>curiosity</h3>
+                        <div
+                              class="creations__container_item curiosity"
+                              data-tilt
+                        >
+                              <h3>The<br />curiosity</h3>
                         </div>
-                        <div class="creations__container_item fisheye">
-                              <h3>Make it<br>fisheye</h3>
+                        <div
+                              class="creations__container_item fisheye"
+                              data-tilt
+                        >
+                              <h3>Make it<br />fisheye</h3>
                         </div>
                   </div>
 
@@ -117,26 +152,41 @@
             </section>
 
             <footer class="footer">
-                  <div class="footer__logo">
-                        <img src="./images/logo.svg" alt="Loopstudios logo" />
+                  <div class="wrapper">
+                        <div class="footer__logo">
+                              <img
+                                    src="./images/logo.svg"
+                                    alt="Loopstudios logo"
+                              />
+                        </div>
+
+                        <ul class="footer__list">
+                              <li><a href="#" class="menu_item">About</a></li>
+                              <li><a href="#" class="menu_item">Careers</a></li>
+                              <li><a href="#" class="menu_item">Events</a></li>
+                              <li><a href="#" class="menu_item">Products</a></li>
+                              <li><a href="#" class="menu_item">Support</a></li>
+                        </ul>
                   </div>
 
-                  <ul class="footer__list">
-                        <li>About</li>
-                        <li>Careers</li>
-                        <li>Events</li>
-                        <li>Products</li>
-                        <li>Support</li>
-                  </ul>
+                  <div class="wrapper">
+                        <div class="footer__social_icons">
+                              <i class="fab fa-facebook-square"></i>
+                              <i class="fab fa-twitter"></i>
+                              <i class="fab fa-pinterest"></i>
+                              <i class="fab fa-instagram"></i>
+                        </div>
 
-                  <div class="footer__social_icons">
-                        <i class="fab fa-facebook-square"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-pinterest"></i>
-                        <i class="fab fa-instagram"></i>
+                        <p>© 2021 Loopstudios. All rights reserved.</p>
                   </div>
-
-                  <p>© 2021 Loopstudios. All rights reserved.</p>
             </footer>
+
+            <script src="./app./script.js"></script>
+            <script
+                  src="https://code.jquery.com/jquery-3.5.1.js"
+                  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+                  crossorigin="anonymous"
+            ></script>
+            <script src="./app./tilt.js"></script>
       </body>
 </html>

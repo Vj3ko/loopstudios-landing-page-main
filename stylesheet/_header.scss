@@ -1,19 +1,60 @@
 .header {
       width: 100%;
+      height: 40.625rem;
       background: url(../images/mobile/image-hero.jpg) no-repeat;
       background-size: cover;
-      padding: 2.5rem 1.375rem 0;
+      padding: 5%;
       display: flex;
       flex-direction: column;
       position: relative;
 
+      &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba($--clr-black, 0.3);
+      }
+
       @include responsive("tablet") {
             background: url(../images/desktop/image-hero.jpg) no-repeat;
+            padding: 2.5rem 3.375rem 0;
       }
 
       @include responsive("laptop") {
-            padding: 3.9375rem 10.3125rem 0;
-            background-size: 100%;
+            padding: 3.9375rem 15% 0;
+            background-size: cover;
+      }
+
+      .menu_item {
+            font-size: 1.25rem;
+            text-decoration: none;
+            text-transform: capitalize;
+            color: $--clr-white;
+            transition: 250ms ease-in-out;
+            position: relative;
+            display: block;
+
+            &::after {
+                  content: "";
+                  width: 50%;
+                  height: 2px;
+                  background-color: $--clr-white;
+                  position: absolute;
+                  bottom: -0.25rem;
+                  left: 25%;
+                  opacity: 0;
+                  transform: scaleX(0);
+                  transform-origin: center;
+                  transition: all 300ms ease-in-out;
+            }
+
+            &:hover::after {
+                  opacity: 1;
+                  transform: scaleX(1);
+            }
       }
 
       &__navbar {
@@ -21,17 +62,14 @@
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
-
-            @include responsive("tablet") {
-                  display: flex;
-                  justify-content: space-between;
-            }
+            z-index: 20;
+            margin-top: 1rem;
 
             &_logo {
-                  width: 9.375rem;
+                  flex-basis: 9.375rem;
 
                   @include responsive("tablet") {
-                        width: 12.5rem;
+                        flex-basis: 12.5rem;
                   }
 
                   img {
@@ -39,39 +77,60 @@
                   }
             }
 
-            .header__menu {
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100vh;
-                  background: $--clr-black;
-                  padding: 2.5rem 1.375rem 0;
-                  display: flex;
-                  flex-direction: column;
+            &_list {
                   display: none;
 
                   @include responsive("tablet") {
                         display: flex;
-                        background: none;
-                        position: relative;
-                        height: 100%;
-                        width: max-content;
-                        padding: 0;
-                        margin-left: auto;
+                  }
+
+                  .menu_item {
+                        @include responsive("tablet") {
+                              font-size: 1rem;
+                        }
+                  }
+
+                  a:not(:last-of-type) {
+                        @include responsive("tablet") {
+                              margin-right: 1rem;
+                        }
+
+                        @include responsive("laptop") {
+                              margin-right: 2rem;
+                        }
+                  }
+            }
+
+            .header__menu {
+                  position: absolute;
+                  top: 0;
+                  left: 100%;
+                  right: 0;
+                  min-height: 100vh;
+                  background: $--clr-black;
+                  padding: 5%;
+                  display: flex;
+                  flex-direction: column;
+                  opacity: 0;
+                  transition: all 250ms ease-in-out;
+
+                  &.show {
+                        left: 0;
+                        opacity: 1;
                   }
 
                   .mobile-menu {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-
-                        @include responsive("tablet") {
-                              display: none;
-                        }
+                        margin-top: 1rem;
 
                         .mobile-logo {
                               width: 9.375rem;
+                        }
+
+                        .close-btn {
+                              cursor: pointer;
                         }
                   }
 
@@ -81,66 +140,32 @@
                         margin-bottom: auto;
 
                         @include responsive("tablet") {
-                              display: flex;
+                              display: none;
                         }
 
-                        a {
-                              font-size: 1.25rem;
-                              text-decoration: none;
+                        .menu_item {
                               text-transform: uppercase;
-                              color: $--clr-white;
-                              transition: 250ms ease-in-out;
-                              position: relative;
-                              display: block;
                               width: max-content;
 
-                              @include responsive("tablet") {
-                                    font-size: 1rem;
-                                    text-transform: capitalize;
-                              }
-
                               &:hover {
+                                    margin-left: 0.625rem;
                                     color: $--clr-dk_Gray;
                               }
 
                               &::after {
-                                    content: "";
-                                    width: 100%;
-                                    height: 1px;
                                     background-color: $--clr-dk_Gray;
-                                    display: block;
-                                    position: absolute;
-                                    bottom: -0.25rem;
-                                    left: 0;
-                                    opacity: 0;
-                                    transform: scaleX(0);
-                                    transform-origin: left;
-                                    transition: all 300ms ease-in-out;
-                              }
-
-                              &:hover::after {
-                                    opacity: 1;
-                                    transform: scaleX(1);
                               }
                         }
 
                         a:not(:last-of-type) {
                               margin-bottom: 1.875rem;
-
-                              @include responsive("tablet") {
-                                    margin: 0;
-                                    margin-right: 1rem;
-                              }
-
-                              @include responsive("tablet") {
-                                    margin: 0;
-                                    margin-right: 2rem;
-                              }
                         }
                   }
             }
 
-            .hamburger {
+            &_hamburger {
+                  cursor: pointer;
+
                   @include responsive("tablet") {
                         display: none;
                   }
@@ -148,25 +173,31 @@
       }
 
       &__title {
-            padding: 1.875rem;
             border: 2px solid $--clr-white;
-            margin: 10rem 0;
+            margin-top: auto;
+            margin-bottom: auto;
             max-width: 25rem;
+            z-index: 15;
 
-            // @include responsive("laptop") {
-            //       max-width: 40.625rem;
-            //       padding: 2.5rem 3rem;
-            // }
+            @include responsive("laptop") {
+                  max-width: 40.875rem;
+            }
 
             h1 {
                   font-size: 2.25rem;
                   font-weight: 400;
                   text-transform: uppercase;
                   color: $--clr-white;
+                  padding: 1.875rem;
 
-                  // @include responsive("laptop") {
-                  //       font-size: 4.3125rem;
-                  // }
+                  @include responsive("tablet") {
+                        font-size: 3rem;
+                  }
+
+                  @include responsive("laptop") {
+                        font-size: 4.25rem;
+                        padding: 2.5rem 3rem;
+                  }
             }
       }
 }

@@ -1,25 +1,7 @@
+@import "reset";
 @import "variables";
 @import "breakpoints";
 @import "header";
 @import "main";
 @import "creations";
 @import "footer";
-
-
-*,
-*::before,
-*::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-}
-
-html,
-body {
-      // font-family: "Alata", sans-serif;
-      font-family: 'Josefin Sans', sans-serif;
-}
-
-p {
-      font-size: 0.9375rem;
-}
