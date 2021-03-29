@@ -5,8 +5,8 @@ This is a solution to the [Loopstudios landing page challenge on Frontend Mentor
 
 ### Links
 
-- Solution URL: 
-- Live Site URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/mobile-first-landing-page-with-html-scss-js-and-tiltjs-library-SnQ-BC5ds
+- Live Site URL: https://loopstudios-landing-page-main-one.vercel.app/
 - Github repo URL: https://github.com/Vjekoni/loopstudios-landing-page-main
 
 
