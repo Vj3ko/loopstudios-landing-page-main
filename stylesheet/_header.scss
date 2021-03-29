@@ -117,6 +117,14 @@
                   &.show {
                         left: 0;
                         opacity: 1;
+
+                        & .menu_list .menu_item {
+                              visibility: visible;
+                        }
+
+                        & .mobile-menu .close-btn {
+                              visibility:visible;
+                        }
                   }
 
                   .mobile-menu {
@@ -130,7 +138,7 @@
                         }
 
                         .close-btn {
-                              cursor: pointer;
+                              visibility: hidden;
                         }
                   }
 
@@ -146,6 +154,7 @@
                         .menu_item {
                               text-transform: uppercase;
                               width: max-content;
+                              visibility: hidden;
 
                               &:hover {
                                     margin-left: 0.625rem;
@@ -164,7 +173,6 @@
             }
 
             &_hamburger {
-                  cursor: pointer;
 
                   @include responsive("tablet") {
                         display: none;
