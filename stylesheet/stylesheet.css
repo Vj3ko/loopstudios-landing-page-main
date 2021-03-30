@@ -12,10 +12,6 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 html::-webkit-scrollbar {
   width: 0;
   background: transparent;
@@ -69,6 +65,8 @@ a:hover::after, a:focus::after {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
 }
 
 .header::before {
@@ -93,21 +91,6 @@ a:hover::after, a:focus::after {
     padding: 3.9375rem 15% 0;
     background-size: cover;
   }
-}
-
-.header .menu_item {
-  font-size: 1.25rem;
-  text-decoration: none;
-  text-transform: capitalize;
-  color: white;
-  -webkit-transition: 250ms ease-in-out;
-  transition: 250ms ease-in-out;
-  position: relative;
-  display: block;
-}
-
-.header .menu_item::after {
-  background-color: white;
 }
 
 .header__navbar {
@@ -226,6 +209,8 @@ a:hover::after, a:focus::after {
 .header__navbar .header__navbar_nav .header__navbar_logo {
   -ms-flex-preferred-size: 9.375rem;
       flex-basis: 9.375rem;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
 }
 
 @media only screen and (min-width: 48em) {
@@ -260,6 +245,8 @@ a:hover::after, a:focus::after {
   border: none;
   background: transparent;
   cursor: pointer;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 
 .header__navbar .header__navbar_nav .header__navbar_buttons .header__navbar_button.hidden {
@@ -274,6 +261,8 @@ a:hover::after, a:focus::after {
 
 .header__navbar .header__navbar_list {
   display: none;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
 }
 
 @media only screen and (min-width: 48em) {
@@ -282,6 +271,21 @@ a:hover::after, a:focus::after {
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+.header__navbar .header__navbar_list .menu_item {
+  font-size: 1.25rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+  position: relative;
+  display: block;
+}
+
+.header__navbar .header__navbar_list .menu_item::after {
+  background-color: white;
 }
 
 @media only screen and (min-width: 48em) {
@@ -308,6 +312,8 @@ a:hover::after, a:focus::after {
   margin-bottom: auto;
   max-width: 25rem;
   z-index: 15;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
 }
 
 @media only screen and (min-width: 62.5em) {
@@ -364,6 +370,8 @@ a:hover::after, a:focus::after {
   background: url(../images/mobile/image-interactive.jpg) center no-repeat;
   background-size: contain;
   height: 14.0625rem;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
 }
 
 @media only screen and (min-width: 48em) {
@@ -386,6 +394,8 @@ a:hover::after, a:focus::after {
   max-width: 34.375rem;
   margin-left: auto;
   margin-right: auto;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
 }
 
 @media only screen and (min-width: 62.5em) {
@@ -435,6 +445,8 @@ a:hover::after, a:focus::after {
   text-align: center;
   margin: auto;
   margin-top: 6rem;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
 }
 
 @media only screen and (min-width: 62.5em) {
@@ -447,6 +459,8 @@ a:hover::after, a:focus::after {
 }
 
 .creations__title {
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
   margin-bottom: 1.25rem;
 }
 
@@ -463,6 +477,8 @@ a:hover::after, a:focus::after {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   gap: 1.5625rem;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
 }
 
 @media only screen and (min-width: 37.5em) {
@@ -502,6 +518,8 @@ a:hover::after, a:focus::after {
   height: 30vw;
   position: relative;
   text-align: left;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
 }
 
 .creations__container_item:hover {

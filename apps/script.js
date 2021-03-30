@@ -16,11 +16,21 @@ menuItems.forEach(item => {
 
 function openMenu() {
       menu.classList.add("show");
-      body.style.overflow = "hidden";
+      body.style.overflowY = "hidden";
 }
 
 function closeMenu() {
       menu.classList.remove("show");
-      body.style.overflowY = "auto";
-      body.style.overflowX = "hidden";
+      body.style.overflowY = "initial";
+
 }
+
+const focusedItems = document.querySelectorAll(".focused");
+console.log(focusedItems)
+
+// focusedItems.forEach(item => {
+//       if (item == document.activeElement ) {
+//             console.log(item)
+//       }
+// })
+

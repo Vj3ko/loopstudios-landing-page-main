@@ -3,6 +3,7 @@
       text-align: center;
       margin: auto;
       margin-top: 6rem;
+      transition: $--transition;
 
       @include responsive("laptop") {
             padding: 0 15%;
@@ -11,6 +12,7 @@
       }
 
       &__title {
+            transition: $--transition;
             @extend .main__info_title;
             margin-bottom: 1.25rem;
 
@@ -24,6 +26,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5625rem;
+            transition: $--transition;
 
             @include responsive("phone") {
                   grid-template-columns: 1fr 1fr;
@@ -49,6 +52,7 @@
                   height: 30vw;
                   position: relative;
                   text-align: left;
+                  transition: $--transition;
 
                   &:hover {
                         cursor: pointer;

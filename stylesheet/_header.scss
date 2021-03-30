@@ -7,6 +7,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
+      transition: $--transition;
 
       &::before {
             content: "";
@@ -26,20 +27,6 @@
       @include responsive("laptop") {
             padding: 3.9375rem 15% 0;
             background-size: cover;
-      }
-
-      .menu_item {
-            font-size: 1.25rem;
-            text-decoration: none;
-            text-transform: capitalize;
-            color: $--clr-white;
-            transition: 250ms ease-in-out;
-            position: relative;
-            display: block;
-
-            &::after {
-                  background-color: $--clr-white;
-            }
       }
 
       &__navbar {
@@ -125,6 +112,7 @@
 
                   .header__navbar_logo {
                         flex-basis: 9.375rem;
+                        transition: $--transition;
 
                         @include responsive("tablet") {
                               flex-basis: 12.5rem;
@@ -153,6 +141,7 @@
                               border: none;
                               background: transparent;
                               cursor: pointer;
+                              transition: all 250ms ease-in-out;
 
                               &.hidden {
                                     opacity: 0;
@@ -169,12 +158,25 @@
 
             .header__navbar_list {
                   display: none;
+                  transition: $--transition;
 
                   @include responsive("tablet") {
                         display: flex;
                   }
 
                   .menu_item {
+                        font-size: 1.25rem;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        color: $--clr-white;
+                        transition: 250ms ease-in-out;
+                        position: relative;
+                        display: block;
+
+                        &::after {
+                              background-color: $--clr-white;
+                        }
+
                         @include responsive("tablet") {
                               font-size: 1rem;
                         }
@@ -198,6 +200,7 @@
             margin-bottom: auto;
             max-width: 25rem;
             z-index: 15;
+            transition: $--transition;
 
             @include responsive("laptop") {
                   max-width: 40.875rem;
