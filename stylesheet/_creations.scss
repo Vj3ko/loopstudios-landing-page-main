@@ -187,7 +187,8 @@
             margin-top: 2.1875rem;
             transition: all 300ms ease-in-out;
 
-            &:hover {
+            &:hover,
+            &:focus {
                   color: $--clr-white;
                   background: $--clr-black;
             }

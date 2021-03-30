@@ -32,66 +32,61 @@
       <body id="body">
             <header class="header">
                   <nav class="header__navbar">
-                        <div class="header__navbar_logo">
-                              <img
-                                    src="./images/logo.svg"
-                                    alt="Loopstudios logo"
-                              />
-                        </div>
-
-                        <div class="header__navbar_list">
-                              <a href="#" class="menu_item">About</a>
-                              <a href="#" class="menu_item">Careers</a>
-                              <a href="#" class="menu_item">Events</a>
-                              <a href="#" class="menu_item">Products</a>
-                              <a href="#" class="menu_item">Support</a>
-                        </div>
-
-                        <div class="header__menu">
-                              <div class="mobile-menu">
+                        <div class="header__navbar_nav">
+                              <div class="header__navbar_logo">
                                     <img
                                           src="./images/logo.svg"
-                                          class="mobile-logo"
                                           alt="Loopstudios logo"
                                     />
-                                    <a
+                              </div>
+
+                              <div class="header__navbar_buttons">
+                                    <button
                                           href="#"
-                                          id="close-btn"
-                                          class="close-btn"
+                                          id="menu-btn-open"
+                                          class="header__navbar_button visible"
+                                          aria-label="menu open button"
+                                          tabindex="1"
+                                    >
+                                          <img
+                                                src="./images/icon-hamburger.svg"
+                                                alt="menu hamburger icon"
+                                                id="menu-icon"
+                                          />
+                                    </button>
+                                    <button
+                                          href="#"
+                                          id="menu-btn-close"
+                                          class="header__navbar_button hidden"
+                                          aria-label="menu close button"
+                                          tabindex="1"
                                     >
                                           <img
                                                 src="./images/icon-close.svg"
-                                                alt=" X close icon"
-                                    /></a>
-                              </div>
-
-                              <div class="menu_list">
-                                    <a href="#" class="menu_item toggle"
-                                          >About</a
-                                    >
-                                    <a href="#" class="menu_item toggle"
-                                          >Careers</a
-                                    >
-                                    <a href="#" class="menu_item toggle"
-                                          >Events</a
-                                    >
-                                    <a href="#" class="menu_item toggle"
-                                          >Products</a
-                                    >
-                                    <a href="#" class="menu_item toggle"
-                                          >Support</a
-                                    >
+                                                alt="menu hamburger icon"
+                                                id="menu-icon"
+                                          />
+                                    </button>
                               </div>
                         </div>
 
-                        <a
-                              href="#"
-                              id="open-btn"
-                              class="header__navbar_hamburger"
-                              ><img
-                                    src="./images/icon-hamburger.svg"
-                                    alt="menu hamburger icon"
-                        /></a>
+                        <div class="header__navbar_list">
+                              <a href="#" class="menu_item toggle" tabindex="2"
+                                    >About</a
+                              >
+                              <a href="#" class="menu_item toggle" tabindex="3"
+                                    >Careers</a
+                              >
+                              <a href="#" class="menu_item toggle" tabindex="4"
+                                    >Events</a
+                              >
+                              <a href="#" class="menu_item toggle" tabindex="5"
+                                    >Products</a
+                              >
+                              <a href="#" class="menu_item toggle" tabindex="6"
+                                    >Support</a
+                              >
+                        </div>
                   </nav>
 
                   <div class="header__title">
@@ -172,7 +167,9 @@
                               </div>
                         </div>
 
-                        <a href="#" class="creations-btn">See all</a>
+                        <a href="#" class="creations-btn" tabindex="7"
+                              >See all</a
+                        >
                   </section>
             </main>
 

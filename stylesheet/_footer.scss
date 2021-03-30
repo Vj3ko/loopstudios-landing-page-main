@@ -45,23 +45,7 @@
                   position: relative;
 
                   &::after {
-                        content: "";
-                        width: 50%;
-                        height: 2px;
                         background-color: $--clr-white;
-                        display: block;
-                        position: absolute;
-                        bottom: -0.25rem;
-                        left: 25%;
-                        opacity: 0;
-                        transform: scaleX(0);
-                        transform-origin: center;
-                        transition: all 300ms ease-in-out;
-                  }
-
-                  &:hover::after {
-                        opacity: 1;
-                        transform: scaleX(1);
                   }
             }
 
@@ -102,34 +86,20 @@
                   @include responsive("laptop") {
                         font-size: 1.875rem;
                   }
-
-                  &:hover {
-                        cursor: pointer;
-                  }
-
-                  &::after {
-                        content: "";
-                        width: 50%;
-                        height: 2px;
-                        background-color: $--clr-white;
-                        display: block;
-                        position: absolute;
-                        bottom: -0.5rem;
-                        left: 25%;
-                        opacity: 0;
-                        transform: scaleX(0);
-                        transform-origin: center;
-                        transition: all 300ms ease-in-out;
-                  }
-
-                  &:hover::after {
-                        opacity: 1;
-                        transform: scaleX(1);
-                  }
             }
 
-            a:not(:last-of-type) {
-                  margin-right: 1rem;
+            a {
+                  position: relative;
+
+                  &::after {
+                        background-color: $--clr-white;
+
+                        bottom: -0.8rem;
+                  }
+
+                  &:not(:last-of-type) {
+                        margin-right: 1rem;
+                  }
             }
       }
 

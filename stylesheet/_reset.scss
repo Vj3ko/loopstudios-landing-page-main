@@ -26,4 +26,28 @@ p {
 
 a {
       font-family: "Alata", sans-serif;
+
+      &:hover,
+      &:focus {
+            outline: none;
+      }
+
+      &::after {
+            content: "";
+            width: 50%;
+            height: 2px;
+            position: absolute;
+            bottom: -0.5rem;
+            left: 25%;
+            opacity: 0;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: all 300ms ease-in-out;
+      }
+
+      &:hover::after,
+      &:focus::after {
+            opacity: 1;
+            transform: scaleX(1);
+      }
 }
