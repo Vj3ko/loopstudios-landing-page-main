@@ -123,7 +123,7 @@
                         }
 
                         & .mobile-menu .close-btn {
-                              visibility:visible;
+                              visibility: visible;
                         }
                   }
 
@@ -173,7 +173,6 @@
             }
 
             &_hamburger {
-
                   @include responsive("tablet") {
                         display: none;
                   }

@@ -450,6 +450,11 @@ a {
   }
 }
 
+.creations__container .bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .creations__container_item {
   width: 100%;
   height: 30vw;
@@ -463,10 +468,6 @@ a {
 
 .creations__container_item:hover h3 {
   color: black;
-}
-
-.creations__container_item:hover::after {
-  opacity: 1;
 }
 
 .creations__container_item::before {
@@ -518,98 +519,61 @@ a {
 }
 
 .creations__container_item.earth {
-  background: url(../images/mobile/image-deep-earth.jpg) center no-repeat;
-  background-size: cover;
+  background-image: url(../images/mobile/image-deep-earth.jpg);
+}
+
+.creations__container_item.arcade {
+  background-image: url(../images/mobile/image-night-arcade.jpg);
+}
+
+.creations__container_item.soccer {
+  background-image: url(../images/mobile/image-soccer-team.jpg);
+}
+
+.creations__container_item.grid {
+  background-image: url(../images/mobile/image-grid.jpg);
+}
+
+.creations__container_item.vr {
+  background-image: url(../images/mobile/image-from-above.jpg);
+}
+
+.creations__container_item.borealis {
+  background-image: url(../images/mobile/image-pocket-borealis.jpg);
+}
+
+.creations__container_item.curiosity {
+  background-image: url(../images/mobile/image-curiosity.jpg);
+}
+
+.creations__container_item.fisheye {
+  background-image: url(../images/mobile/image-fisheye.jpg);
 }
 
 @media only screen and (min-width: 62.5em) {
   .creations__container_item.earth {
-    background: url(../images/desktop/image-deep-earth.jpg) no-repeat;
-    background-size: cover;
+    background-image: url(../images/desktop/image-deep-earth.jpg);
   }
-}
-
-.creations__container_item.arcade {
-  background: url(../images/mobile/image-night-arcade.jpg) no-repeat;
-  background-size: cover;
-}
-
-@media only screen and (min-width: 62.5em) {
   .creations__container_item.arcade {
-    background: url(../images/desktop/image-night-arcade.jpg) no-repeat;
-    background-size: cover;
+    background-image: url(../images/desktop/image-night-arcade.jpg);
   }
-}
-
-.creations__container_item.soccer {
-  background: url(../images/mobile/image-soccer-team.jpg) no-repeat;
-  background-size: cover;
-}
-
-@media only screen and (min-width: 62.5em) {
   .creations__container_item.soccer {
-    background: url(../images/desktop/image-soccer-team.jpg) no-repeat;
-    background-size: cover;
+    background-image: url(../images/desktop/image-soccer-team.jpg);
   }
-}
-
-.creations__container_item.grid {
-  background: url(../images/mobile/image-grid.jpg) no-repeat;
-  background-size: cover;
-}
-
-@media only screen and (min-width: 62.5em) {
   .creations__container_item.grid {
-    background: url(../images/desktop/image-grid.jpg) no-repeat;
-    background-size: cover;
+    background-image: url(../images/desktop/image-grid.jpg);
   }
-}
-
-.creations__container_item.vr {
-  background: url(../images/mobile/image-from-above.jpg) no-repeat;
-  background-size: cover;
-}
-
-@media only screen and (min-width: 62.5em) {
   .creations__container_item.vr {
-    background: url(../images/desktop/image-from-above.jpg) no-repeat;
-    background-size: cover;
+    background-image: url(../images/desktop/image-from-above.jpg);
   }
-}
-
-.creations__container_item.borealis {
-  background: url(../images/mobile/image-pocket-borealis.jpg) no-repeat;
-  background-size: cover;
-}
-
-@media only screen and (min-width: 62.5em) {
   .creations__container_item.borealis {
-    background: url(../images/desktop/image-pocket-borealis.jpg) no-repeat;
-    background-size: cover;
+    background-image: url(../images/desktop/image-pocket-borealis.jpg);
   }
-}
-
-.creations__container_item.curiosity {
-  background: url(../images/mobile/image-curiosity.jpg) no-repeat;
-  background-size: cover;
-}
-
-@media only screen and (min-width: 62.5em) {
   .creations__container_item.curiosity {
-    background: url(../images/desktop/image-curiosity.jpg) no-repeat;
-    background-size: cover;
+    background-image: url(../images/desktop/image-curiosity.jpg);
   }
-}
-
-.creations__container_item.fisheye {
-  background: url(../images/mobile/image-fisheye.jpg) no-repeat;
-  background-size: cover;
-}
-
-@media only screen and (min-width: 62.5em) {
   .creations__container_item.fisheye {
-    background: url(../images/desktop/image-fisheye.jpg) no-repeat;
-    background-size: cover;
+    background-image: url(../images/desktop/image-fisheye.jpg);
   }
 }
 
@@ -784,6 +748,7 @@ a {
 
 .footer__social_icons i {
   font-size: 1.5625rem;
+  color: white;
   position: relative;
 }
 
@@ -821,7 +786,7 @@ a {
           transform: scaleX(1);
 }
 
-.footer__social_icons i:not(:last-of-type) {
+.footer__social_icons a:not(:last-of-type) {
   margin-right: 1rem;
 }
 
