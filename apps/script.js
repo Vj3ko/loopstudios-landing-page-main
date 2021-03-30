@@ -25,12 +25,6 @@ function closeMenu() {
 
 }
 
-const focusedItems = document.querySelectorAll(".focused");
-console.log(focusedItems)
-
-// focusedItems.forEach(item => {
-//       if (item == document.activeElement ) {
-//             console.log(item)
-//       }
-// })
+// const focusedItems = document.querySelectorAll(".focused");
+// console.log(focusedItems)
 
