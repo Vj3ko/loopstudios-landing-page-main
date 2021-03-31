@@ -37,6 +37,17 @@
             z-index: 20;
             margin-top: 1rem;
 
+            @keyframes slideIn {
+                  from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                  }
+                  to {
+                        transform: translateX(0);
+                        opacity: 1;
+                  }
+            }
+
             &.show {
                   position: absolute;
                   top: 0;
@@ -48,6 +59,7 @@
                   display: flex;
                   flex-flow: column nowrap;
                   justify-content: unset;
+                  animation: slideIn 250ms forwards 0s linear;
 
                   .header__navbar_nav {
                         display: flex;

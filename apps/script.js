@@ -25,6 +25,30 @@ function closeMenu() {
 
 }
 
-// const focusedItems = document.querySelectorAll(".focused");
-// console.log(focusedItems)
+let focusableEls = menu.querySelectorAll('a[href]:not([disabled]), button:not([disabled])');
+let firstFocusableEl = focusableEls[1];
+let lastFocusableEl = focusableEls[focusableEls.length - 1];
 
+function trapFocus(element) {
+      element.addEventListener('keydown', function (e) {
+            const isTabPressed = e => e.key === 'Tab' || e.keyCode === 9;
+
+            if (!isTabPressed) {
+                  return;
+            }
+
+            if (e.shiftKey) /* shift + tab */ {
+                  if (document.activeElement === firstFocusableEl) {
+                        lastFocusableEl.focus();
+                        e.preventDefault();
+                  }
+            } else /* tab */ {
+                  if (document.activeElement === lastFocusableEl) {
+                        firstFocusableEl.focus();
+                        e.preventDefault();
+                  }
+            }
+      });
+}
+
+trapFocus(menu);
