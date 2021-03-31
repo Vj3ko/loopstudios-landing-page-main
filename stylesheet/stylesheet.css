@@ -258,12 +258,6 @@ a:hover::after, a:focus::after {
   height: 1.25rem;
 }
 
-@media only screen and (min-width: 48em) {
-  .header__navbar .header__navbar_nav .header__navbar_buttons {
-    display: none;
-  }
-}
-
 .header__navbar .header__navbar_nav .header__navbar_buttons .header__navbar_button {
   position: absolute;
   top: 0;
@@ -275,6 +269,13 @@ a:hover::after, a:focus::after {
   cursor: pointer;
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
+}
+
+@media only screen and (min-width: 48em) {
+  .header__navbar .header__navbar_nav .header__navbar_buttons .header__navbar_button {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .header__navbar .header__navbar_nav .header__navbar_buttons .header__navbar_button.hidden {

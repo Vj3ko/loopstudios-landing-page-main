@@ -140,10 +140,6 @@
                         width: 1.5625rem;
                         height: 1.25rem;
 
-                        @include responsive("tablet") {
-                              display: none;
-                        }
-
                         .header__navbar_button {
                               position: absolute;
                               top: 0;
@@ -154,6 +150,11 @@
                               background: transparent;
                               cursor: pointer;
                               transition: all 250ms ease-in-out;
+
+                              @include responsive("tablet") {
+                                    display: none;
+                                    visibility: hidden;
+                              }
 
                               &.hidden {
                                     opacity: 0;

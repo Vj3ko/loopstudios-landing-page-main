@@ -17,6 +17,7 @@ menuItems.forEach(item => {
 function openMenu() {
       menu.classList.add("show");
       body.style.overflowY = "hidden";
+      trapFocus(menu);
 }
 
 function closeMenu() {
@@ -50,5 +51,3 @@ function trapFocus(element) {
             }
       });
 }
-
-trapFocus(menu);
